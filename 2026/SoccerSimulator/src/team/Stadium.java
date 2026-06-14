@@ -15,7 +15,11 @@ public class Stadium {
     }
 
     public void setEntryprice(double entryprice) {
-        this.entryprice = entryprice;
+        if(entryprice < 0){
+            System.out.println("the entry price can't be less than 0");
+        } else {
+            this.entryprice = entryprice;
+        }
     }
 
     public double getEntryprice() {

@@ -2,12 +2,12 @@ package finance;
 
 public class Contract {
 
-    private int anos;
-    private double salarioSemanal;
+    private int years;
+    private double salary;
 
-    public Contract(int anos, double salarioSemanal){
-        this.anos = anos;
-        this.salarioSemanal = salarioSemanal;
+    public Contract(int years, double salary){
+        this.years = years;
+        this.salary = salary;
     }
 
 }

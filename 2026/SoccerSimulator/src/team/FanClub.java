@@ -12,7 +12,6 @@ public class FanClub {
        this.members = 100;
     }
 
-
     @Override
     public String toString() {
         return "FanClub: " + this.name  + ", Members: " + this.members;

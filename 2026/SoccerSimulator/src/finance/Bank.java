@@ -6,14 +6,12 @@ import java.util.ArrayList;
 
 public class Bank {
 
-    final String name;
     private double availableBalance;
     private final ArrayList<Loan> loans;
 
-    public Bank(String name) {
+    public Bank() {
         this.availableBalance = 1000.0;
         this.loans = new ArrayList<>();
-        this.name = name+"'s Bank";
     }
 
     public void setMoney(double amount){

@@ -26,7 +26,7 @@ public class Team {
         this.name = teamName;
         this.stadium = new Stadium(stadiumName, stadiumCapacity, stadiumEntryPrice);
         this.fanClub = new FanClub(fanclubName);
-        this.bank = new Bank(teamName);
+        this.bank = new Bank();
         this.trophyRoom = new TrophyRoom();
         this.elenco = new HashSet<>();
     }
@@ -35,8 +35,9 @@ public class Team {
         return teamTotalValue;
     }
 
-    void setManager(Manager manager) {
+    void setManager(Manager manager, int years, double salary ) {
         this.manager = manager;
+        contractManager(years, salary, manager);
     }
 
     void setPlayer(Player player, int anos, double salarioSemanal){
@@ -54,27 +55,16 @@ public class Team {
         }
     }
 
-    void setPresident(President president){
+    void setPresident(President president, int years, double salary){
         this.president = president;
+        contractManager(years, salary, president);
+
     }
 
-    public void retornarTodasAsInformacoe(){
-        System.out.println(this.toString());
-        System.out.println(this.fanClub);
-        System.out.println(this.stadium);
-    }
-
-    private void contractManager(int anos, double salarioSemanal, Person person){
-        person.setContract(anos,salarioSemanal);
+    private void contractManager(int years, double salary, Person person){
+        person.setContract(years,salary);
         person.setTeam(this);
     }
 
-    public Bank getBank() {
-        return bank;
-    }
 
-    @Override
-    public String toString() {
-        return "nome do clube: " + this.name;
-    }
 }
